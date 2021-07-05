@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+#生成宏的前缀
+MOTHOD_Macor="fbzh"
+
+
+
 TABLENAME=symbols
 SYMBOL_DB_FILE="symbols"
-
-
 #方法
 STRING_SYMBOL_FILE="$PROJECT_DIR/VHLObfuscation/func.list"
 #单词
@@ -73,7 +76,7 @@ if [[ ! -z "$line" ]]; then
 ramdom=`ramdomString`
 echo $line $ramdom
 insertValue $line $ramdom
-echo "#define $line $ramdom" >> $HEAD_FILE
+echo "#define $line $MOTHOD_Macor$ramdom" >> $HEAD_FILE
 fi
 done
 echo "#endif" >> $HEAD_FILE

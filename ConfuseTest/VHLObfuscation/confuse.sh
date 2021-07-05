@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
-#以**为开头的表示，只改这里就好
-MOTHOD_MARK="vhl_"
+#以**为开头的标示
+#MOTHOD_MARK="click"
+#MOTHOD_MARK="createUI"
+MOTHOD_MARK="show"
+
+
+#生成宏的前缀
+MOTHOD_Macor="fbzh"
+
 
 
 
@@ -56,7 +63,7 @@ if [[ ! -z "$line" ]]; then
 ramdom=`ramdomString`
 echo $line $ramdom
 insertValue $line $ramdom
-echo "#define $line $ramdom" >> $HEAD_FILE
+echo "#define $line $MOTHOD_Macor$ramdom" >> $HEAD_FILE
 fi
 done
 echo "#endif" >> $HEAD_FILE
